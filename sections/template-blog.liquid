@@ -10,7 +10,7 @@
                         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
                             {% if article.image %}
                                 <a href="{{ article.url }}">
-                                    <img class="w-full h-80 object-cover" src="{{ article.image | img_url: 'medium' }}" data-sizes="auto" alt="{{ article.image.alt }}" />
+                                    <img class="w-full h-80 object-cover" src="{{ article.image | img_url: '300px' }}" alt="{{ article.image.alt }}" height="{{img.height}}" width="{{img.width}}"/>
                                 </a>
                             {% else %}
                                 {{ 'image' | placeholder_svg_tag: 'w-full h-80 object-cover bg-gray-100' }}
