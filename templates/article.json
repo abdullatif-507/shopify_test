@@ -17,13 +17,13 @@
           "settings": {
           }
         },
-        "author": {
-          "type": "article_author",
+        "published_date": {
+          "type": "article_published_date",
           "settings": {
           }
         },
-        "published_date": {
-          "type": "article_published_date",
+        "author": {
+          "type": "article_author",
           "settings": {
           }
         },
@@ -40,8 +40,8 @@
       },
       "block_order": [
         "title",
-        "author",
         "published_date",
+        "author",
         "thumbnail",
         "content"
       ],
