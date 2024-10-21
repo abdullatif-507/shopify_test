@@ -12,6 +12,8 @@
     "template": {
       "type": "template-collection",
       "settings": {
+        "number_of_products_per_page": 6,
+        "show_vendor": false
       }
     }
   },
