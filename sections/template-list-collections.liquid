@@ -1,15 +1,3 @@
-<div class="mb-4">
-  <h3 class="font-bold text-lg mb-2">Filter by Tag</h3>
-  <ul class="flex flex-wrap">
-    {% assign tags = collections['your-collection-handle'].all_tags %}
-    {% for tag in tags %}
-      <li class="mr-4">
-        <a href="{{ collection.url | append: '?filter=' | append: tag }}" class="text-blue-500 hover:underline">{{ tag }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-
 <div class="flex flex-col items-center my-8">
     <h1 class="text-3xl font-medium">{{ section.settings.title }}</h1>
 
@@ -40,6 +28,25 @@
             {% endfor %}
         </div>
     </div>
+</div>
+
+
+<div class="flex flex-wrap justify-center">
+  {% for product in collections['https://test-507.myshopify.com/collections/cute-figure'].products %}
+    <div class="max-w-xs rounded overflow-hidden shadow-lg m-4">
+      <img class="w-full h-48 object-cover" src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+      <div class="p-4">
+        <h2 class="font-bold text-xl mb-2">{{ product.title }}</h2>
+        <p class="text-gray-700 text-base mb-4">{{ product.price | money }}</p>
+        <form action="/cart/add" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded transition-transform transform hover:scale-105 hover:bg-blue-600">
+            Add to Cart
+          </button>
+        </form>
+      </div>
+    </div>
+  {% endfor %}
 </div>
 
 
