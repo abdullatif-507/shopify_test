@@ -15,9 +15,15 @@
         "number_of_products_per_page": 6,
         "show_vendor": false
       }
+    },
+    "custom-collection": {
+      "type": "custom-collection",
+      "settings": {
+      }
     }
   },
   "order": [
-    "template"
+    "template",
+    "custom-collection"
   ]
 }
