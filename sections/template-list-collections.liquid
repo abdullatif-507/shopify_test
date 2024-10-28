@@ -1,3 +1,15 @@
+<div class="mb-4">
+  <h3 class="font-bold text-lg mb-2">Filter by Tag</h3>
+  <ul class="flex flex-wrap">
+    {% assign tags = collections['your-collection-handle'].all_tags %}
+    {% for tag in tags %}
+      <li class="mr-4">
+        <a href="{{ collection.url | append: '?filter=' | append: tag }}" class="text-blue-500 hover:underline">{{ tag }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
 <div class="flex flex-col items-center my-8">
     <h1 class="text-3xl font-medium">{{ section.settings.title }}</h1>
 
