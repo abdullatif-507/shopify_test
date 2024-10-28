@@ -30,9 +30,10 @@
     </div>
 </div>
 
+{% assign collection_handle = '628484374861' %}
 
 <div class="flex flex-wrap justify-center">
-  {% for product in collections['628484374861'].products %}
+  {% for product in collections[collection_handle].products %}
     <div class="max-w-xs rounded overflow-hidden shadow-lg m-4">
       <img class="w-full h-48 object-cover" src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
       <div class="p-4">
